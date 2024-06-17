@@ -45,7 +45,7 @@ extern ExitProcess: proc ; Terminates the current process and returns an exit co
 	      call WriteConsoleA    ; Call WriteConsoleA to print the message
       add rsp, 32             ; Free up the stack space by resetting rsp to its original value
 
-      mov rcx, 0       ; Indicate that the program finished successfully with exit code 0
+      xor rcx, rcx       ; Indicate that the program finished successfully with exit code 0
       call ExitProcess ; Tell the system that we're done and hand back control
     main endp          ; End of the main function
 
