@@ -37,9 +37,7 @@ extern ExitProcess: proc ; Terminates the current process and returns an exit co
                           ; The result of the function is stored in rax
                           
 	      mov stdout, rax   ; Store the value of rax in stdout
-      add rsp, 32         ; Free up the stack space by resetting rsp to its original value
 
-      sub rsp, 32             ; Reserve 32 bytes of stack space again
 	      mov rcx, stdout       ; Move the value of stdout into rcx
 	      lea rdx, msg          ; Load the address of msg into rdx
 	      mov r8, lengthof msg  ; Count the size of msg and store it in r8
