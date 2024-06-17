@@ -17,7 +17,7 @@ extern ExitProcess: proc ; Terminates the current process and returns an exit co
   ; Declare our memory address where our data will be stored
   ; The following structure is used for declaration:
   ; Identifier + size of reservation + what will be stored
-  msg db "Hello World", 0Ah ; The numeric part at the end indicates the end of our text string (0Ah is line feed)
+  msg db "Hello World", 0 ; The '0' at the end indicates the end of our text string (null-terminated)
 
   stdout qword ? ; Reserve 64 bits for later use
   nBytesWritten qword ? ; Reserve another 64 bits for later use
